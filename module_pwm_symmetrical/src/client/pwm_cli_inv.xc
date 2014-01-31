@@ -37,13 +37,6 @@ void update_pwm_inv( t_pwm_control& ctrl, chanend c, unsigned value[])
 		// Initialise channel number
 		ctrl.chan_id_buf[ctrl.pwm_cur_buf][i] = i;
 
-#ifndef PWM_CLIPPED_RANGE
-		/* clamp to avoid issues with LONG_SINGLE */
-		if (value[i] > (PWM_MAX_VALUE - (32+PWM_DEAD_TIME))) {
-			value[i] = (PWM_MAX_VALUE - (32+PWM_DEAD_TIME));
-		}
-#endif
-
                 /* symmetrically insert dead-times
                    high-side: reduce pulse with, low-side: increase pulse width
                    also suppress pulses that are shorter than PWM_DEAD_TIME/2 */
@@ -52,6 +45,12 @@ void update_pwm_inv( t_pwm_control& ctrl, chanend c, unsigned value[])
 		if(uPwmValueH <= PWM_DEAD_TIME) {
                         uPwmValueH = 0;
                         uPwmValueL = 0;
+#ifndef PWM_CLIPPED_RANGE
+        /* clamp to avoid issues with LONG_SINGLE */
+		} else if (uPwmValueH >= (PWM_MAX_VALUE - (32+PWM_DEAD_TIME))) {
+		    uPwmValueH = PWM_MAX_VALUE - (32+PWM_DEAD_TIME);
+		    uPwmValueL = uPwmValueH - PWM_DEAD_TIME;
+#endif
 		} else {
 			uPwmValueH -=  PWM_DEAD_TIME/2;
 			uPwmValueL +=  PWM_DEAD_TIME/2;

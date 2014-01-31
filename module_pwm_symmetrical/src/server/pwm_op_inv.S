@@ -153,16 +153,57 @@ pwm_op_inv:
 	eq r8, r10, 7
 	bt r8, PWM_MODE_7
 
+        // stop PWM if no mode matches
+
 PWM_STOP:
-    ldc r8, 0
-    sub r7, r8, 1
-    out res[r0], r8
-    out res[r1], r8
-    out res[r2], r8
-    out res[r6], r7
-    out res[r9], r7
-    out res[r11], r7
-	bu	PWM_STOP
+        // as we don't wait for any port timers, the new values will
+        // be output immediately - without waiting for the previous
+        // pwm period to finish.
+        ldc r8, 0
+        out res[r0], r8
+        out res[r1], r8
+        out res[r2], r8
+        // use clrbuf to suppress glitches
+        setc res[r6], XS1_SETC_RUN_CLRBUF
+        setc res[r9], XS1_SETC_RUN_CLRBUF
+        setc res[r11], XS1_SETC_RUN_CLRBUF
+
+        ldw r10, sp[11]    // load channel
+
+PWM_STOP_LOOP:
+        #if LOCK_ADC_TO_PWM
+        // dummy port will be used for synchronisation
+	ldw r8, sp[16] // load port
+	setpt res[r8], r7 // pt = sync point
+	ldw r10, sp[15] // load adc trig chanend
+	in r8, res[r8] // wait until we hit setpt
+	outct res[r10], XS1_CT_END // send adc trig token
+	ldw r10, sp[11] // load clobbered chanend
+        #else
+        // timed output on Port 0; only for synchronisation
+        ldc r8, 16
+        sub r8, r7, r8
+        setpt res[r0], r7
+        ldc r8, 0
+        out res[r0], r8
+        #endif
+
+        // setup event
+        mov r8, r11
+        ldap r11, GO_UPDATE_M1
+        setv res[r10], r11
+        eeu res[r10]
+        setsr 0x1
+        clrsr 0x1
+        clre
+        mov r11, r8
+
+        ldc r8, SYNC_INCREMENT
+        add r7, r8, r7
+        mkmsk r8, 16
+        and r7, r8, r7
+        
+        bu PWM_STOP_LOOP
 
 PWM_MODE_1:
 	// load channel
