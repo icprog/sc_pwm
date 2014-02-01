@@ -19,6 +19,8 @@
 
 #include "pwm_cli_inv.h"
 
+extern inline void calculate_data_out_quick( unsigned value, REFERENCE_PARAM(t_out_data,pwm_out_data) );
+
 #pragma unsafe arrays
 void update_pwm_inv( t_pwm_control& ctrl, chanend c, unsigned value[])
 {
