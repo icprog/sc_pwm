@@ -24,6 +24,9 @@ extern inline void calculate_data_out_quick( unsigned value, REFERENCE_PARAM(t_o
 #pragma unsafe arrays
 void update_pwm_inv( t_pwm_control& ctrl, chanend c, unsigned value[])
 {
+        unsigned uPwmValueH;
+        unsigned uPwmValueL;
+
 	/* update buffer value for next calculation */
 	ctrl.pwm_cur_buf = (ctrl.pwm_cur_buf+1)&1;
 
@@ -41,16 +44,29 @@ void update_pwm_inv( t_pwm_control& ctrl, chanend c, unsigned value[])
 		}
 #endif
 
+                /* symmetrically insert dead-times
+                   high-side: reduce pulse with, low-side: increase pulse width
+                   also suppress pulses that are shorter than PWM_DEAD_TIME/2 */
+		uPwmValueH = value[i];
+		uPwmValueL = value[i];
+		if(uPwmValueH <= PWM_DEAD_TIME) {
+                        uPwmValueH = 0;
+                        uPwmValueL = 0;
+		} else {
+			uPwmValueH -=  PWM_DEAD_TIME/2;
+			uPwmValueL +=  PWM_DEAD_TIME/2;
+		}
+
 #ifdef PWM_CLIPPED_RANGE
 		calculate_data_out_quick(value[i], ctrl.pwm_out_data_buf[ctrl.pwm_cur_buf][i]);
 #else
-		calculate_data_out_ref( value[i],
+		calculate_data_out_ref( uPwmValueH,
 				ctrl.pwm_out_data_buf[ctrl.pwm_cur_buf][i].ts0,
 				ctrl.pwm_out_data_buf[ctrl.pwm_cur_buf][i].out0,
 				ctrl.pwm_out_data_buf[ctrl.pwm_cur_buf][i].ts1,
 				ctrl.pwm_out_data_buf[ctrl.pwm_cur_buf][i].out1,
 				ctrl.pwm_out_data_buf[ctrl.pwm_cur_buf][i].cat );
-		calculate_data_out_ref( (value[i]+PWM_DEAD_TIME),
+		calculate_data_out_ref( uPwmValueL,
 				ctrl.pwm_out_data_buf[ctrl.pwm_cur_buf][i].inv_ts0,
 				ctrl.pwm_out_data_buf[ctrl.pwm_cur_buf][i].inv_out0,
 				ctrl.pwm_out_data_buf[ctrl.pwm_cur_buf][i].inv_ts1,
