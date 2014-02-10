@@ -47,9 +47,9 @@ void update_pwm_inv( t_pwm_control& ctrl, chanend c, unsigned value[])
                         uPwmValueL = 0;
 #ifndef PWM_CLIPPED_RANGE
         /* clamp to avoid issues with LONG_SINGLE */
-		} else if (uPwmValueH >= (PWM_MAX_VALUE - (32+PWM_DEAD_TIME))) {
-		    uPwmValueH = PWM_MAX_VALUE - (32+PWM_DEAD_TIME);
-		    uPwmValueL = uPwmValueH - PWM_DEAD_TIME;
+		} else if (uPwmValueL >= (PWM_MAX_VALUE - (32+PWM_DEAD_TIME))) {
+		    uPwmValueL = PWM_MAX_VALUE - (32+PWM_DEAD_TIME);
+		    uPwmValueH = uPwmValueL - PWM_DEAD_TIME;
 #endif
 		} else {
 			uPwmValueH -=  PWM_DEAD_TIME/2;
