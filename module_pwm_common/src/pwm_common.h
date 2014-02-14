@@ -69,7 +69,7 @@ typedef struct {
 
 
 // Define this to limit the symmetrical PWM duty cycle to a smaller range, enabling faster update
-#define PWM_CLIPPED_RANGE
+//#define PWM_CLIPPED_RANGE
 
 // The number of PWM channels that are supported by the symmetrical PWM
 #ifndef PWM_CHAN_COUNT
