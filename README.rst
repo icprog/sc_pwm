@@ -47,4 +47,4 @@ License
 Please see `LICENSE`_.
 
 
-.. _LICENSE: https://github.com/synapticon/sc_pwm/blob/master/LICENSE
+.. _LICENSE: https://github.com/synapticon/sc_pwm/blob/master/LICENSE.dox
