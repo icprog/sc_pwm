@@ -1,20 +1,20 @@
-XCORE.com Multi Channel PWM SOFTWARE COMPONENT
+XCORE Multi Channel PWM SOFTWARE COMPONENT
 ..............................................
+.. image:: http://forum.synapticon.com/Themes/MinimalistAndEffective_by_SMFSimple/images/logo.png
+.. image:: http://s27.postimg.org/higfoxmn7/xmos_logo_reduced.png
+
+The Pulse Width Modulation(PWM) components generates a number PWM signals using either one multibit port or a group of 1-bit ports. 
 
 :Latest release: 1.0.0rc0
 :Maintainer: djpwilk
-:Description: Various PWM driver components for single bit and multi bit ports
-
-
-:Maintainer:  Gopal Lakshmanagowda (github: nlgk2001)
-
-The Pulse Width Modulation(PWM) components generates a number PWM signals using either one multibit port or a group of 1-bit ports. 
+:Maintainer: Gopal Lakshmanagowda (github: nlgk2001)
+:Maintainer: support@synapticon.com
 
 Key Features
 ============
 
   * The components can be configured for Leading edge, Trailing edge and Center edge variations
-  * configurable timestep, resolution
+  * Configurable timestep, resolution
   * PWM single bit component generates PWM signals on upto 16 1-bit ports from a single thread.
   * PWM multi bit component generates the PWM signals on a single 4, 8 or 16 bit port.
 
@@ -29,13 +29,22 @@ Known Issues
 
 none
 
-Support
-=======
-
-Issues may be submitted via the Issues tab in this github repo. Response to any issues submitted as at the discretion of the manitainer for this line.
-
 Required software (dependencies)
 ================================
 
   * None
 
+Changelog
+=======
+
+- 1.0.0
+
+  * Initial release
+
+License
+=======
+
+Please see `LICENSE`_.
+
+
+.. _LICENSE: https://github.com/synapticon/sc_pwm/blob/master/LICENSE
