@@ -12,8 +12,11 @@
  * copyright notice above.
  *
  **/                                   
+#pragma once
+
 #include "pwm_common.h"
 
+#include <xs1.h>
 
 /** \brief Implementation of the centre aligned inverted pair PWM server, with ADC synchronization
  *

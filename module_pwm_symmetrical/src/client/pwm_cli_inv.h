@@ -12,9 +12,11 @@
  * copyright notice above.
  *
  **/                                   
-#include <xs1.h>
+#pragma once
 
 #include "pwm_cli_common.h"
+
+#include <xs1.h>
 
 /** \brief Update the PWM server with three new values
  *
