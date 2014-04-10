@@ -160,6 +160,7 @@ PWM_STOP:
         // be output immediately - without waiting for the previous
         // pwm period to finish.
         ldc r8, 0
+        not r10, r8
         out res[r0], r8
         out res[r1], r8
         out res[r2], r8
@@ -167,6 +168,9 @@ PWM_STOP:
         setc res[r6], XS1_SETC_RUN_CLRBUF
         setc res[r9], XS1_SETC_RUN_CLRBUF
         setc res[r11], XS1_SETC_RUN_CLRBUF
+        out res[r6], r10
+        out res[r9], r10
+        out res[r11], r10
 
         ldw r10, sp[11]    // load channel
 
