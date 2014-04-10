@@ -271,6 +271,8 @@ PWM_MODE_1_LOOP:
 	// update SYNC timestamp
 	ldc r8, SYNC_INCREMENT
 	add r7, r8, r7
+	mkmsk r8, 16
+	and r7, r8, r7
 
 	bu PWM_MODE_1
 	
@@ -345,6 +347,8 @@ GO_UPDATE_M1:
 	ldw r7, sp[13]
 	ldc r8, SYNC_INCREMENT
 	add r7, r8, r7
+	mkmsk r8, 16
+	and r7, r8, r7
 
 	// check mode and branch as appropriate
 	eq r8, r10, 1
