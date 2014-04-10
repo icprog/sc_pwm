@@ -181,10 +181,8 @@ PWM_STOP_LOOP:
 	ldw r10, sp[11] // load clobbered chanend
         #else
         // timed output on Port 0; only for synchronisation
-        ldc r8, 16
-        sub r8, r7, r8
-        setpt res[r0], r7
         ldc r8, 0
+        setpt res[r0], r7
         out res[r0], r8
         #endif
 
