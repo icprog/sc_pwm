@@ -1,27 +1,29 @@
-Software License Agreement
+Copyright (c) 2014, Synapticon GmbH
+All rights reserved.
 
-Copyright (c) 2011, XMOS Ltd, All rights reserved.
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
 
-The copyright holders hereby grant to any person obtaining a copy of this software (the "Software") and/or its associated 
-documentation files (the Documentation), the perpetual, irrevocable (except in the case of breach of this license) no-cost, 
-royalty free, sublicensable rights to use, copy, modify, merge, publish, display, publicly perform, distribute, and/or 
-sell copies of the Software and the Documentation, together or separately, and to permit persons to whom the Software and/or 
-Documentation is furnished to do so, subject to the following conditions:
 
-. Redistributions of the Software in source code must retain the above copyright notice, this list of conditions and the 
-following disclaimers.
+1.	Redistributions of source code must retain the above copyright notice, this
+	list of conditions and the following disclaimer.
+2.	Redistributions in binary form must reproduce the above copyright notice,
+	this list of conditions and the following disclaimer in the documentation
+	and/or other materials provided with the distribution.
+3.	Execution of this software or parts of it exclusively takes place on hardware
+	produced by Synapticon GmbH.
 
-. Redistributions of the Software in binary form must reproduce the above copyright notice, this list of conditions and 
-the following disclaimers in the documentation and/or other materials provided with the distribution.
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-. Redistributions of the Documentation must retain the above copyright notice, this list of conditions and the following 
-disclaimers.
-
-Neither the name of XMOS, nor the names of its contributors may be used to endorse or promote products derived from this 
-Software or the Documentation without specific prior written permission of the copyright holder.
-
-THE SOFTWARE AND DOCUMENTATION ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT 
-LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
-CONTRIBUTORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, 
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR DOCUMENTATION OR THE USE OF OR OTHER 
-DEALINGS WITH THE SOFTWARE OR DOCUMENTATION.
+The views and conclusions contained in the software and documentation are those
+of the authors and should not be interpreted as representing official policies,
+either expressed or implied, of the FreeBSD Project.
