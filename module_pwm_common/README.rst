@@ -1,10 +1,10 @@
 SOMANET Common PWM module interfaces
-================
+====================================
 
 :scope: General Use
 :description: Common PWM module interfaces
-:keywords: pwm , interface
-:boards: SOMANET CORE C22
+:keywords: PWM, SOMANET
+:boards:  XK-SN-1BH12-E, XK-SN-1BQ12-E, SOMANET CORE C22 
 
 Description
 -----------
