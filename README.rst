@@ -1,8 +1,10 @@
 SOMANET Symmetrical PWM Software Component
 .........................................
-:Latest release: 1.0.1
-:Maintainer: Synapticon GmbH
-:Description: The Pulse Width Modulation(PWM) components generates a synatrical PWM signal.
+
+:Latest release: 1.0.0beta0
+:Maintainer: Synapticon
+:Description: SOMANET version of the original XMOS Symmetrical PWM module
+
 
 Key Features
 ============
@@ -21,15 +23,15 @@ Known Issues
 
 none
 
-Required software (dependencies)
-================================
-
-  * None
-
 License
 =======
 
 Please see `LICENSE`_.
 
-
 .. _LICENSE: https://github.com/synapticon/sc_pwm/blob/master/LICENSE.dox
+
+Required software (dependencies)
+================================
+
+  * None
+
