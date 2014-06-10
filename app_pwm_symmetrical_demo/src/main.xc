@@ -37,11 +37,11 @@ int main (void)
 
             t :> ts;
             t when timerafter (ts + 42000) :> void;
-            do_pwm_inv_triggered(c_pwm_ctrl, c_adc_trigger, 
+            do_pwm_inv_triggered(c_pwm_ctrl, c_adc_trigger,
                                  p_dummy, p_high_side, p_low_side,
                                  clk_pwm);
         }
-        
+
 
         /* PWM client */
         on stdcore[3]: {
