@@ -5,9 +5,9 @@
             <board>XK-SN-1BH12-E</board>
             <board>XK-SN-1BQ12-E</board>
             <board>SOMANET CORE C22</board>
-            <componentDependency repo = "git://github.com/synapticon/sc_pwm.git">module_pwm_common</componentDependency>
-            <componentDependency repo = "git://github.com/synapticon/sc_pwm.git">module_pwm_common</componentDependency>
-            <componentDependency repo = "git://github.com/synapticon/sc_pwm.git">module_pwm_symmetrical</componentDependency>
+            <componentDependency repo = "git://github.com/synapticon/sc_pwm.git" version = "1.0.0">module_pwm_common</componentDependency>
+            <componentDependency repo = "git://github.com/synapticon/sc_pwm.git" version = "1.0.0">module_pwm_symmetrical</componentDependency>
+            <componentDependency repo = "git://github.com/synapticon/sc_pwm.git" version = "1.0.0">module_pwm_common</componentDependency>
             <keyword>SOMANET</keyword>
             <keyword>PWM</keyword>
         </component>
@@ -22,7 +22,7 @@
             <board>S XK-SN-1BH12-E</board>
             <board>XK-SN-1BQ12-E</board>
             <board>SOMANET CORE C22</board>
-            <componentDependency repo = "git://github.com/synapticon/sc_pwm.git">module_pwm_common</componentDependency>
+            <componentDependency repo = "git://github.com/synapticon/sc_pwm.git" version = "1.0.0">module_pwm_common</componentDependency>
             <keyword>PWM</keyword>
             <keyword>SOMANET</keyword>
         </component>
@@ -32,7 +32,8 @@
     <name>sc_pwm</name>
     <maintainer>Synapticon</maintainer>
     <partnumber>XM-005838-DH</partnumber>
-    <release parenthash = "45f4ccc952abf73ce41d97dd49f03ba8616c7a7c" version = "1.0.0beta0"></release>
+    <release parenthash = "45f4ccc952abf73ce41d97dd49f03ba8616c7a7c" version = "1.0.0beta0" githash = "7d5744e0ad575aed7779c28faf150accf9f06890"></release>
+    <release parenthash = "a0316c7fe7d7f8ba00e93c240ac09a3b3fb416b5" version = "1.0.0rc0"></release>
     <subpartnumber>XM-005839-SM</subpartnumber>
     <vendor>XMOS</vendor>
     <version_defines></version_defines>
