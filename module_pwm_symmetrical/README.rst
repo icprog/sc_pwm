@@ -1,9 +1,16 @@
-<Add title here>
-================
+SOMANET Symmetrical PWM module
+==============================
 
-:scope: <Put one of Roadmap, Experimental, Early Development or General Use>
-:description: <Add one line here>
-:keywords: <Add comma separated list of keywords>
-:boards: <Add comma separated list of supported boards>
+:scope: General Use
+:description: Symmetrical PWM module
+:keywords: PWM, SOMANET
+:boards: S XK-SN-1BH12-E, XK-SN-1BQ12-E, SOMANET CORE C22
 
-<Add description of software block>
+Key Features
+------------
+  * The module can be configured for Leading edge, Trailing edge and Center edge variations
+  * Configurable timestep, resolution
+
+Description
+-----------
+This module implements symmetrical PWM signal generation. This module iś mainly used for motor control purpouses.

@@ -1,22 +1,17 @@
-XCORE Multi Channel PWM SOFTWARE COMPONENT
-..............................................
-.. image:: http://forum.synapticon.com/Themes/MinimalistAndEffective_by_SMFSimple/images/logo.png
-.. image:: http://s27.postimg.org/higfoxmn7/xmos_logo_reduced.png
-
-The Pulse Width Modulation(PWM) components generates a number PWM signals using either one multibit port or a group of 1-bit ports. 
+SOMANET Symmetrical PWM Software Component
+.........................................
 
 :Latest release: 1.0.0rc0
-:Maintainer: djpwilk
-:Maintainer: Gopal Lakshmanagowda (github: nlgk2001)
-:Maintainer: support@synapticon.com
+:Maintainer: Synapticon
+:Description: SOMANET version of the original XMOS Symmetrical PWM module
+
+:Description: The Pulse Width Modulation(PWM) components generates a synatrical PWM signal. NOTE: Only for use with SOMANET system from Syanpaticon
 
 Key Features
 ============
 
   * The components can be configured for Leading edge, Trailing edge and Center edge variations
   * Configurable timestep, resolution
-  * PWM single bit component generates PWM signals on upto 16 1-bit ports from a single thread.
-  * PWM multi bit component generates the PWM signals on a single 4, 8 or 16 bit port.
 
 Firmware Overview
 =================
@@ -29,22 +24,15 @@ Known Issues
 
 none
 
-Required software (dependencies)
-================================
-
-  * None
-
-Changelog
-=======
-
-- 1.0.0
-
-  * Initial release
-
 License
 =======
 
 Please see `LICENSE`_.
 
-
 .. _LICENSE: https://github.com/synapticon/sc_pwm/blob/master/LICENSE.dox
+
+Required software (dependencies)
+================================
+
+  * None
+

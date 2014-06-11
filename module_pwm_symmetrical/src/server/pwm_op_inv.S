@@ -1,6 +1,6 @@
 /*
- * The copyrights, all other intellectual and industrial 
- * property rights are retained by XMOS and/or its licensors. 
+ * The copyrights, all other intellectual and industrial
+ * property rights are retained by XMOS and/or its licensors.
  * Terms and conditions covering the use of this code can
  * be found in the Xmos End User License Agreement.
  *
@@ -8,10 +8,10 @@
  *
  * In the case where this code is a modification of existing code
  * under a separate license, the separate license terms are shown
- * below. The modifications to the code are still covered by the 
+ * below. The modifications to the code are still covered by the
  * copyright notice above.
  *
- **/                                   
+ **/
 //
 // This implements all PWM configurations for 3 channel
 // PWM. The mode of operation should be updated using
@@ -160,6 +160,7 @@ PWM_STOP:
         // be output immediately - without waiting for the previous
         // pwm period to finish.
         ldc r8, 0
+        not r10, r8
         out res[r0], r8
         out res[r1], r8
         out res[r2], r8
@@ -167,6 +168,9 @@ PWM_STOP:
         setc res[r6], XS1_SETC_RUN_CLRBUF
         setc res[r9], XS1_SETC_RUN_CLRBUF
         setc res[r11], XS1_SETC_RUN_CLRBUF
+        out res[r6], r10
+        out res[r9], r10
+        out res[r11], r10
 
         ldw r10, sp[11]    // load channel
 
@@ -181,10 +185,8 @@ PWM_STOP_LOOP:
 	ldw r10, sp[11] // load clobbered chanend
         #else
         // timed output on Port 0; only for synchronisation
-        ldc r8, 16
-        sub r8, r7, r8
-        setpt res[r0], r7
         ldc r8, 0
+        setpt res[r0], r7
         out res[r0], r8
         #endif
 
@@ -202,7 +204,7 @@ PWM_STOP_LOOP:
         add r7, r8, r7
         mkmsk r8, 16
         and r7, r8, r7
-        
+
         bu PWM_STOP_LOOP
 
 PWM_MODE_1:
@@ -213,7 +215,7 @@ PWM_MODE_1_LOOP:
 
 	// Channel 0
 	ldw r8, r3[0]
-	sub r8, r7, r8 
+	sub r8, r7, r8
 	setpt res[r0], r8
 	ldw r8, r3[4]
 	sub r8, r7, r8
@@ -234,7 +236,7 @@ PWM_MODE_1_LOOP:
 	out res[r1], r8
 	ldw r8, r4[5]
 	out res[r9], r8
-	
+
 	// Channel 2
 	ldw r8, r5[0]
 	sub r8, r7, r8
@@ -271,9 +273,11 @@ PWM_MODE_1_LOOP:
 	// update SYNC timestamp
 	ldc r8, SYNC_INCREMENT
 	add r7, r8, r7
+	mkmsk r8, 16
+	and r7, r8, r7
 
 	bu PWM_MODE_1
-	
+
 GO_UPDATE_M1:
 	// get mode
 	chkct res[r10], 0x1
@@ -345,6 +349,8 @@ GO_UPDATE_M1:
 	ldw r7, sp[13]
 	ldc r8, SYNC_INCREMENT
 	add r7, r8, r7
+	mkmsk r8, 16
+	and r7, r8, r7
 
 	// check mode and branch as appropriate
 	eq r8, r10, 1
@@ -392,7 +398,7 @@ PWM_MODE_2_LOOP:
 	out res[r1], r8
 	ldw r8, r4[5]
 	out res[r9], r8
-	
+
 	// Channel 2
 	ldw r8, r5[0]
 	sub r8, r7, r8
@@ -426,7 +432,7 @@ PWM_MODE_2_LOOP:
 	out res[r0], r8
 	ldw r8, r3[7]
 	out res[r6], r8
-	
+
 	// setup event
 	mov r8, r11
 	ldap r11, GO_UPDATE_M1
@@ -443,7 +449,7 @@ PWM_MODE_2_LOOP:
 	add r7, r8, r7
 	mkmsk r8, 16
 	and r7, r8, r7
-	
+
 	bu PWM_MODE_2
 
 PWM_MODE_3:
@@ -475,7 +481,7 @@ PWM_MODE_3_LOOP:
 	out res[r1], r8
 	ldw r8, r4[5]
 	out res[r9], r8
-	
+
 	// Channel 2
 	ldw r8, r5[0]
 	sub r8, r7, r8
@@ -538,9 +544,9 @@ PWM_MODE_3_LOOP:
 	add r7, r8, r7
 	mkmsk r8, 16
 	and r7, r8, r7
-	
+
 	bu PWM_MODE_3
-	
+
 PWM_MODE_4:
 	// load channel end
 	ldw r10, sp[11]
@@ -689,7 +695,7 @@ PWM_MODE_5_LOOP:
 	ldw r8, r5[1]
 	out res[r2], r8
 	ldw r8, r5[5]
-	out res[r11], r8
+	out res[r11], r8
 	// trigger adc
 	#if LOCK_ADC_TO_PWM
 	ldw r8, sp[16] // load port
