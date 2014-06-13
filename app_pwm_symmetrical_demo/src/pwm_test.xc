@@ -2,7 +2,7 @@
 
 #include <stdlib.h>
 
-/* Send new PWM data after 3 periods. 
+/* Send new PWM data after 3 periods.
    T_period_pwm = 55555ns, T_period_refclk=4ns (assuming 25MHz refclk) */
 #define PWM_CLIENT_UPDATE_DELAY ( (3*56000) / 4 )
 
@@ -43,5 +43,5 @@ void do_pwm_test(chanend c_pwm_ctrl)
         ts += PWM_CLIENT_UPDATE_DELAY;
         t when timerafter (ts) :> void;
     }
-    
+
 }

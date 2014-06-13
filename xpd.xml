@@ -1,42 +1,42 @@
 <?xml version="1.0" ?>
 <xpd>
     <components>
-        <component name = "Tutorial Example LED PWM Driver Component" type = "component" buildresults_path = "module_pwm_tutorial_example/.module_pwm_tutorial_example.buildinfo" scope = "Example" path = "module_pwm_tutorial_example" metainfo_path = "module_pwm_tutorial_example/module_pwm_tutorial_example.metainfo" local = "false" id = "module_pwm_tutorial_example" description = "Simple PWM driver component designed for xTimeComposer Tutorial">
-            <board>XA-SK-GPIO</board>
+        <component description = "SOMANET Symmetrical PWM Demo" type = "demoCode" scope = "General Use" path = "app_pwm_symmetrical_demo" local = "false" id = "app_pwm_symmetrical_demo" name = "SOMANET Symmetrical PWM Demo Application">
+            <board>XK-SN-1BH12-E</board>
+            <board>XK-SN-1BQ12-E</board>
+            <board>SOMANET CORE C22</board>
+            <componentDependency repo = "git://github.com/synapticon/sc_pwm.git" version = "1.0.0">module_pwm_common</componentDependency>
+            <componentDependency repo = "git://github.com/synapticon/sc_pwm.git" version = "1.0.0">module_pwm_symmetrical</componentDependency>
+            <componentDependency repo = "git://github.com/synapticon/sc_pwm.git" version = "1.0.0">module_pwm_common</componentDependency>
+            <keyword>SOMANET</keyword>
             <keyword>PWM</keyword>
-            <keyword>tutorial</keyword>
-            <keyword>LED</keyword>
+        </component>
+        <component description = "Common PWM module interfaces" type = "demoCode" scope = "General Use" path = "module_pwm_common" local = "false" id = "module_pwm_common" name = "SOMANET Common PWM module interfaces">
+            <board>XK-SN-1BH12-E</board>
+            <board>XK-SN-1BQ12-E</board>
+            <board>SOMANET CORE C22</board>
+            <keyword>PWM</keyword>
+            <keyword>SOMANET</keyword>
+        </component>
+        <component description = "Symmetrical PWM module" type = "demoCode" scope = "General Use" path = "module_pwm_symmetrical" local = "false" id = "module_pwm_symmetrical" name = "SOMANET Symmetrical PWM module">
+            <board>S XK-SN-1BH12-E</board>
+            <board>XK-SN-1BQ12-E</board>
+            <board>SOMANET CORE C22</board>
+            <componentDependency repo = "git://github.com/synapticon/sc_pwm.git" version = "1.0.0">module_pwm_common</componentDependency>
+            <keyword>PWM</keyword>
+            <keyword>SOMANET</keyword>
         </component>
     </components>
-    <description>Various PWM driver components for single bit and multi bit ports</description>
-    <location>git@github.com:xcore/sc_pwm.git</location>
+    <description>SOMANET version of the original XMOS Symmetrical PWM module</description>
+    <location>https://github.com/synapticon/sc_pwm.git</location>
     <name>sc_pwm</name>
-    <maintainer>djpwilk</maintainer>
-    <partnumber>XM-001842-DH</partnumber>
-    <release parenthash = "2f7213dfb0234a7cda88d5b3584e301e4d9edcb3" version = "1.0.0alpha0" githash = "56b734e3ac6af178ff0692238c7f2e391b0d3765"></release>
-    <release parenthash = "0e91ddce77b61f061bcbdc44710400d55a13cf1b" version = "1.0.0alpha1" githash = "4e7eafbbbc0c48b75184b5cee64bec1990117d31"></release>
-    <release parenthash = "39bcbdb423cccf3b2c6d540e6890fbefc64c1400" version = "1.0.0alpha2" githash = "90c10781cd7d1a7f82543ffe2ddb765d8620e191"></release>
-    <release parenthash = "90c10781cd7d1a7f82543ffe2ddb765d8620e191" version = "1.0.0rc0"></release>
-    <subpartnumber>XM-001843-SM</subpartnumber>
+    <maintainer>Synapticon</maintainer>
+    <partnumber>XM-005838-DH</partnumber>
+    <release parenthash = "45f4ccc952abf73ce41d97dd49f03ba8616c7a7c" version = "1.0.0beta0" githash = "7d5744e0ad575aed7779c28faf150accf9f06890"></release>
+    <release parenthash = "a0316c7fe7d7f8ba00e93c240ac09a3b3fb416b5" version = "1.0.0rc0"></release>
+    <subpartnumber>XM-005839-SM</subpartnumber>
     <vendor>XMOS</vendor>
-    <xcore_repo>sc_pwm.git</xcore_repo>
+    <version_defines></version_defines>
+    <xcore_repo>git://github.com/xcore/sc_pwm.git</xcore_repo>
     <xpd_version>1.0</xpd_version>
-    <xsoftip_exclude>module_pwm_common</xsoftip_exclude>
-    <xsoftip_exclude>module_pwm_multibit_port</xsoftip_exclude>
-    <xsoftip_exclude>module_pwm_singlebit_port</xsoftip_exclude>
-    <xsoftip_exclude>module_pwm_symmetrical</xsoftip_exclude>
-    <xsoftip_exclude>module_pwm_multibit_fast</xsoftip_exclude>
-    <xsoftip_exclude>module_pwm_singlebit_bldc</xsoftip_exclude>
-    <xsoftip_exclude>module_pwm_singlebit_simple</xsoftip_exclude>
-    <xsoftip_exclude>app_pwm_multibit_fast_demo</xsoftip_exclude>
-    <xsoftip_exclude>app_pwm_multibit_port_test</xsoftip_exclude>
-    <xsoftip_exclude>app_pwm_singlebit_port_test</xsoftip_exclude>
-    <xsoftip_exclude>app_pwm_multibit_port_demo</xsoftip_exclude>
-    <xsoftip_exclude>app_pwm_singlebit_port_demo</xsoftip_exclude>
-    <xsoftip_exclude>app_pwm_singlebit_simple_demo</xsoftip_exclude>
-    <xsoftip_exclude>app_pwm_tutorial_example</xsoftip_exclude>
-    <xsoftip_exclude>testbench_multibit_fast</xsoftip_exclude>
-    <xsoftip_exclude>testbench_singlebit_simple</xsoftip_exclude>
-    <xsoftip_exclude>plugin_pwm</xsoftip_exclude>
-    <xsoftip_exclude>app_pwm_tutorial_simulator</xsoftip_exclude>
 </xpd>

@@ -1,10 +1,10 @@
 SOMANET Symmetrical PWM module
-===========
+==============================
 
 :scope: General Use
 :description: Symmetrical PWM module
-:keywords: pwm , symetrical
-:boards: SOMANET CORE C22
+:keywords: PWM, SOMANET
+:boards: S XK-SN-1BH12-E, XK-SN-1BQ12-E, SOMANET CORE C22
 
 Key Features
 ------------

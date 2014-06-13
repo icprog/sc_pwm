@@ -1,7 +1,7 @@
 /*
  *
- * The copyrights, all other intellectual and industrial 
- * property rights are retained by XMOS and/or its licensors. 
+ * The copyrights, all other intellectual and industrial
+ * property rights are retained by XMOS and/or its licensors.
  * Terms and conditions covering the use of this code can
  * be found in the Xmos End User License Agreement.
  *
@@ -9,7 +9,7 @@
  *
  * In the case where this code is a modification of existing code
  * under a separate license, the separate license terms are shown
- * below. The modifications to the code are still covered by the 
+ * below. The modifications to the code are still covered by the
  * copyright notice above.
  *
  **/                                   
@@ -19,7 +19,6 @@
 #ifdef __pwm_config_h_exists__
 #include "pwm_config.h"
 #endif
-
 
 #ifndef __ASSEMBLER__
 
@@ -66,8 +65,6 @@ typedef struct {
 #define OFFSET_OF_DATA_OUT 32
 #define SIZE_OF_T_DATA_OUT 40
 
-
-
 // Define this to limit the symmetrical PWM duty cycle to a smaller range, enabling faster update
 //#define PWM_CLIPPED_RANGE
 
@@ -84,4 +81,3 @@ typedef struct {
 // The initial number of clocks to wait before starting the PWM loops
 #ifndef INIT_SYNC_INCREMENT
 #define INIT_SYNC_INCREMENT (SYNC_INCREMENT)
-#endif
