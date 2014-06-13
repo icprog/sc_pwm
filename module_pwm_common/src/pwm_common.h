@@ -13,8 +13,8 @@
  * copyright notice above.
  *
  **/                                   
-#ifndef __PWM_COMMON_H_
-#define __PWM_COMMON_H_
+
+#pragma once
 
 #ifdef __pwm_config_h_exists__
 #include "pwm_config.h"
@@ -85,5 +85,3 @@ typedef struct {
 #ifndef INIT_SYNC_INCREMENT
 #define INIT_SYNC_INCREMENT (SYNC_INCREMENT)
 #endif
-
-#endif /*DSC_ALT_PWM_H_*/
