@@ -13,4 +13,4 @@ Key Features
 
 Description
 -----------
-This module implements symmetrical PWM signal generation. This module iś mainly used for motor control purpouses.
+This module implements symmetrical PWM signal generation. This module is mainly used for motor control purposes.

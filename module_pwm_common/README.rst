@@ -8,4 +8,4 @@ SOMANET Common PWM module interfaces
 
 Description
 -----------
-This module contains common interfaces to be implemented by all pwm implementations (modules)
+This module contains common interfaces to be implemented by all PWM implementations (modules)

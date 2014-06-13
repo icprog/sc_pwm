@@ -3,9 +3,9 @@ sc_pwm Change Log
 
 1.0.1
 -----
-  * Added symatrical pwm demo app
+  * Added symmetrical pwm demo app
   * Remove unused demo apps and tests
-  * Bugfixes
+  * Bug fixes
 
 1.0.0
 -----
