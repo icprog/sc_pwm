@@ -81,3 +81,4 @@ typedef struct {
 // The initial number of clocks to wait before starting the PWM loops
 #ifndef INIT_SYNC_INCREMENT
 #define INIT_SYNC_INCREMENT (SYNC_INCREMENT)
+#endif
