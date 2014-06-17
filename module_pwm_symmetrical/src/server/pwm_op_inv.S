@@ -202,8 +202,6 @@ PWM_STOP_LOOP:
 
         ldc r8, SYNC_INCREMENT
         add r7, r8, r7
-        mkmsk r8, 16
-        and r7, r8, r7
 
         bu PWM_STOP_LOOP
 
@@ -273,8 +271,6 @@ PWM_MODE_1_LOOP:
 	// update SYNC timestamp
 	ldc r8, SYNC_INCREMENT
 	add r7, r8, r7
-	mkmsk r8, 16
-	and r7, r8, r7
 
 	bu PWM_MODE_1
 
@@ -349,8 +345,6 @@ GO_UPDATE_M1:
 	ldw r7, sp[13]
 	ldc r8, SYNC_INCREMENT
 	add r7, r8, r7
-	mkmsk r8, 16
-	and r7, r8, r7
 
 	// check mode and branch as appropriate
 	eq r8, r10, 1
@@ -447,8 +441,6 @@ PWM_MODE_2_LOOP:
 	// update SYNC timestamp
 	ldc r8, SYNC_INCREMENT
 	add r7, r8, r7
-	mkmsk r8, 16
-	and r7, r8, r7
 
 	bu PWM_MODE_2
 
@@ -542,8 +534,6 @@ PWM_MODE_3_LOOP:
 	// update SYNC timestamp
 	ldc r8, SYNC_INCREMENT
 	add r7, r8, r7
-	mkmsk r8, 16
-	and r7, r8, r7
 
 	bu PWM_MODE_3
 
@@ -650,8 +640,6 @@ PWM_MODE_4_LOOP:
 	// update SYNC timestamp
 	ldc r8, SYNC_INCREMENT
 	add r7, r8, r7
-	mkmsk r8, 16
-	and r7, r8, r7
 
 	bu PWM_MODE_4
 
@@ -721,8 +709,6 @@ PWM_MODE_5_LOOP:
 	// update SYNC timestamp
 	ldc r8, SYNC_INCREMENT
 	add r7, r8, r7
-	mkmsk r8, 16
-	and r7, r8, r7
 
 	// setup event
 	mov r8, r11
@@ -816,8 +802,6 @@ PWM_MODE_6_LOOP:
 	// update SYNC timestamp
 	ldc r8, SYNC_INCREMENT
 	add r7, r8, r7
-	mkmsk r8, 16
-	and r7, r8, r7
 
 	// setup event
 	mov r8, r11
@@ -887,8 +871,6 @@ PWM_MODE_7_LOOP:
 	// update SYNC timestamp
 	ldc r8, SYNC_INCREMENT
 	add r7, r8, r7
-	mkmsk r8, 16
-	and r7, r8, r7
 
 	// setup event
 	mov r8, r11
