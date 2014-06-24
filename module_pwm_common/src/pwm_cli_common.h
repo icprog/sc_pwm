@@ -13,8 +13,8 @@
  * copyright notice above.
  *
  **/
-#ifndef _PWM_CLI_COMMON__H_
-#define _PWM_CLI_COMMON__H_
+
+#pragma once
 
 #include <xs1.h>
 #include <xccompat.h>
@@ -60,4 +60,3 @@ void order_pwm( REFERENCE_PARAM(unsigned,mode), unsigned chan_id[], t_out_data p
  */
 void pwm_share_control_buffer_address_with_server(chanend c, REFERENCE_PARAM(t_pwm_control, ctrl));
 
-#endif /* _PWM_CLI_COMMON__H_ */
