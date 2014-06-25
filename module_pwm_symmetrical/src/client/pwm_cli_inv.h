@@ -18,14 +18,15 @@
 
 #include <xs1.h>
 
-/** \brief Update the PWM server with three new values
+/**
+ * @brief Update the PWM server with three new values
  *
- *  On the next cycle through the PWM, the server will update the PWM
- *  pulse widths with these new values
+ * On the next cycle through the PWM, the server will update the PWM
+ * pulse widths with these new values
  *
- *  \param ctrl the client control structure for this PWM server
- *  \param c the control channel for the PWM server
- *  \param value an array of three 24 bit values for the PWM server
+ * @param ctrl the client control structure for this PWM server
+ * @param c the control channel for the PWM server
+ * @param value an array of three 24 bit values for the PWM server
  */
 void update_pwm_inv( t_pwm_control& ctrl, chanend c, unsigned value[]);
 
