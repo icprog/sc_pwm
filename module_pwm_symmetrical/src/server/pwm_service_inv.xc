@@ -16,10 +16,10 @@
 #include <xs1.h>
 
 #ifdef __pwm_config_h_exists__
-#include "pwm_config.h"
+#include <pwm_config.h>
 #endif
 
-#include "pwm_service_inv.h"
+#include <pwm_service_inv.h>
 
 
 #if LOCK_ADC_TO_PWM

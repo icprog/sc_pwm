@@ -1,10 +1,10 @@
-#include "pwm_test.h"
+#include <pwm_test.h>
 
 #include <pwm_service_inv.h>
 
 #include <stdlib.h>
 #include <xs1.h>
-#include "platform.h"
+#include <platform.h>
 
 /* For a PWM clock speed >100 MHz only the reference clock can be used.
    The reference clock can be configured in the platform XN file */

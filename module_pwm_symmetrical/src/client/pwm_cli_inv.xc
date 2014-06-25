@@ -14,10 +14,10 @@
  */
 
 #ifdef __pwm_config_h_exists__
-#include "pwm_config.h"
+#include <pwm_config.h>
 #endif
 
-#include "pwm_cli_inv.h"
+#include <pwm_cli_inv.h>
 
 extern inline void calculate_data_out_quick( unsigned value, REFERENCE_PARAM(t_out_data,pwm_out_data) );
 

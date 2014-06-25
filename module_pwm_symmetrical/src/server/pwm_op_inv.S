@@ -22,10 +22,10 @@
 #include <xs1.h>
 
 #ifdef __pwm_config_h_exists__
-#include "pwm_config.h"
+#include <pwm_config.h>
 #endif
 
-#include "pwm_common.h"
+#include <pwm_common.h>
 
 .extern pwm_op_inv
 .globl pwm_op_inv.nstackwords

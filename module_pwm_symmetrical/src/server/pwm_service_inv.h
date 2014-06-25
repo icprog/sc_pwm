@@ -14,7 +14,7 @@
  **/
 #pragma once
 
-#include "pwm_common.h"
+#include <pwm_common.h>
 
 #include <xs1.h>
 

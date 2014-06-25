@@ -17,7 +17,7 @@
 #pragma once
 
 #ifdef __pwm_config_h_exists__
-#include "pwm_config.h"
+#include <pwm_config.h>
 #endif
 
 #ifndef __ASSEMBLER__

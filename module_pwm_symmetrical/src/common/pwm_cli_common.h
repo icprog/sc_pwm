@@ -19,7 +19,7 @@
 #include <xs1.h>
 #include <xccompat.h>
 
-#include "pwm_common.h"
+#include <pwm_common.h>
 
 // Calculate timings for PWM output
 void calculate_data_out( unsigned value, REFERENCE_PARAM(t_out_data,pwm_out_data) );
