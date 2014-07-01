@@ -18,7 +18,7 @@
 
 #include <xs1.h>
 
-/** 
+/**
  * @brief Implementation of the centre aligned inverted pair PWM server, with ADC synchronization
  *
  * This server includes a port which triggers the ADC measurement

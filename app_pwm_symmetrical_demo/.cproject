@@ -158,9 +158,8 @@
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/gcc&quot;"/>
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_pwm_symmetrical_demo/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_pwm_symmetrical_demo}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_common/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_common}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src/client}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src/common}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src/server}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical}&quot;' />
@@ -277,9 +276,8 @@
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/gcc&quot;"/>
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_pwm_symmetrical_demo/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_pwm_symmetrical_demo}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_common/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_common}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src/client}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src/common}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src/server}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical}&quot;' />
@@ -402,9 +400,8 @@
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/c++/4.2.1/xcore-xmos-elf&quot;"/>
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_pwm_symmetrical_demo/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_pwm_symmetrical_demo}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_common/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_common}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src/client}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src/common}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src/server}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical}&quot;' />
@@ -663,9 +660,8 @@
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/gcc&quot;"/>
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_pwm_symmetrical_demo/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_pwm_symmetrical_demo}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_common/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_common}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src/client}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src/common}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src/server}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical}&quot;' />
@@ -782,9 +778,8 @@
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/gcc&quot;"/>
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_pwm_symmetrical_demo/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_pwm_symmetrical_demo}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_common/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_common}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src/client}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src/common}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src/server}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical}&quot;' />
@@ -907,9 +902,8 @@
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/c++/4.2.1/xcore-xmos-elf&quot;"/>
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_pwm_symmetrical_demo/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_pwm_symmetrical_demo}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_common/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_common}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src/client}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src/common}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src/server}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical}&quot;' />

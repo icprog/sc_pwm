@@ -12,7 +12,7 @@
  * below. The modifications to the code are still covered by the
  * copyright notice above.
  *
- **/                                   
+ **/
 
 #pragma once
 

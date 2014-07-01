@@ -156,9 +156,8 @@
 								<option id = "com.xmos.xc.compiler.option.include.paths.72150281" name="com.xmos.xc.compiler.option.include.paths" superClass="com.xmos.xc.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/gcc&quot;"/>
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_common/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_common}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src/client}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src/client}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src/common}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src/server}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical}&quot;' />
@@ -273,9 +272,8 @@
 								<option id = "com.xmos.c.compiler.option.include.paths.57204625" name="com.xmos.c.compiler.option.include.paths" superClass="com.xmos.c.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/gcc&quot;"/>
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_common/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_common}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src/client}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src/client}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src/common}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src/server}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical}&quot;' />
@@ -396,9 +394,8 @@
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/gcc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/c++/4.2.1&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/c++/4.2.1/xcore-xmos-elf&quot;"/>
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_common/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_common}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src/client}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src/client}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src/common}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src/server}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_pwm_symmetrical}&quot;' />
