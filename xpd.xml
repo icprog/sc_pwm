@@ -33,7 +33,8 @@
     <maintainer>Synapticon</maintainer>
     <partnumber>XM-005838-DH</partnumber>
     <release parenthash = "45f4ccc952abf73ce41d97dd49f03ba8616c7a7c" version = "1.0.0beta0" githash = "7d5744e0ad575aed7779c28faf150accf9f06890"></release>
-    <release parenthash = "a0316c7fe7d7f8ba00e93c240ac09a3b3fb416b5" version = "1.0.0rc0"></release>
+    <release parenthash = "a0316c7fe7d7f8ba00e93c240ac09a3b3fb416b5" version = "1.0.0rc0" githash = "e3391d26ef95c6c2c4279fb2cd156d3fa23eb008"></release>
+    <release parenthash = "2dfdd8bbe8c8de6049d01f2f60af54dc61428838" version = "1.0.1rc1"></release>
     <subpartnumber>XM-005839-SM</subpartnumber>
     <vendor>XMOS</vendor>
     <version_defines></version_defines>
