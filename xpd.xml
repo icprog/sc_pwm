@@ -2,7 +2,7 @@
 <xpd>
     <components></components>
     <description>SOMANET version of the original XMOS Symmetrical PWM module</description>
-    <docdir>module_pwm_symmetrical</docdir>
+    <docdir>module_pwm_symmetrical/doc</docdir>
     <exclude_dir>app_pwm_symmetrical_demo</exclude_dir>
     <location>https://github.com/synapticon/sc_pwm.git</location>
     <name>sc_pwm</name>
