@@ -29,6 +29,8 @@
     <release parenthash = "b25546ac1c7b78d24379b77cdcf8ed87d8d4c1f3" version = "1.0.1rc2"></release>
     <subpartnumber>XM-005839-SM</subpartnumber>
     <vendor>XMOS</vendor>
+    <docdir>module_pwm_symmetrical</docdir>
+    <exclude_dir>app_pwm_symmetrical_demo</exclude_dir>
     <version_defines></version_defines>
     <xcore_repo>git://github.com/xcore/sc_pwm.git</xcore_repo>
     <xpd_version>1.0</xpd_version>
