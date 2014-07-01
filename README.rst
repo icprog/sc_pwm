@@ -1,7 +1,7 @@
 SOMANET Symmetrical PWM Software Component
 .........................................
 
-:Latest release: 1.0.1rc2
+:Latest release: 1.0.1rc3
 :Maintainer: Synapticon
 :Description: SOMANET version of the original XMOS Symmetrical PWM module
 
