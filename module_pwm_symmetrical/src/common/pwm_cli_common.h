@@ -1,5 +1,4 @@
 /*
- *
  * The copyrights, all other intellectual and industrial
  * property rights are retained by XMOS and/or its licensors.
  * Terms and conditions covering the use of this code can
@@ -13,13 +12,13 @@
  * copyright notice above.
  *
  **/
-#ifndef _PWM_CLI_COMMON__H_
-#define _PWM_CLI_COMMON__H_
+
+#pragma once
 
 #include <xs1.h>
 #include <xccompat.h>
 
-#include "pwm_common.h"
+#include <pwm_common.h>
 
 // Calculate timings for PWM output
 void calculate_data_out( unsigned value, REFERENCE_PARAM(t_out_data,pwm_out_data) );
@@ -50,14 +49,14 @@ inline void calculate_data_out_quick( unsigned value, REFERENCE_PARAM(t_out_data
 void order_pwm( REFERENCE_PARAM(unsigned,mode), unsigned chan_id[], t_out_data pwm_out_data[]);
 
 
-/** \brief Share the control buffer address with the server
+/**
+ * @brief Share the control buffer address with the server
  *
- *  The PWM client and server share a common block of memory.  The client passes a reference
- *  to this block through to the server at initalization time.
+ * The PWM client and server share a common block of memory.  The client passes a reference
+ * to this block through to the server at initalization time.
  *
- *  \param c The PWM control channel
- *  \param ctrl The shared PWM control data structure reference
+ * @param c The PWM control channel
+ * @param ctrl The shared PWM control data structure reference
  */
 void pwm_share_control_buffer_address_with_server(chanend c, REFERENCE_PARAM(t_pwm_control, ctrl));
 
-#endif /* _PWM_CLI_COMMON__H_ */

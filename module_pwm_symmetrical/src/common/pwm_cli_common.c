@@ -14,8 +14,8 @@
  *
  **/
 
-#include "pwm_cli_common.h"
-#include "pwm_common.h"
+#include <pwm_cli_common.h>
+#include <pwm_common.h>
 
 void pwm_share_control_buffer_address_with_server(chanend c, t_pwm_control* ctrl)
 {

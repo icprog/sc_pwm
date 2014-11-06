@@ -13,13 +13,12 @@
  * copyright notice above.
  *
  **/
-#ifndef __PWM_COMMON_H_
-#define __PWM_COMMON_H_
+
+#pragma once
 
 #ifdef __pwm_config_h_exists__
-#include "pwm_config.h"
+#include <pwm_config.h>
 #endif
-
 
 #ifndef __ASSEMBLER__
 
@@ -66,8 +65,6 @@ typedef struct {
 #define OFFSET_OF_DATA_OUT 32
 #define SIZE_OF_T_DATA_OUT 40
 
-
-
 // Define this to limit the symmetrical PWM duty cycle to a smaller range, enabling faster update
 //#define PWM_CLIPPED_RANGE
 
@@ -85,5 +82,3 @@ typedef struct {
 #ifndef INIT_SYNC_INCREMENT
 #define INIT_SYNC_INCREMENT (SYNC_INCREMENT)
 #endif
-
-#endif /*DSC_ALT_PWM_H_*/

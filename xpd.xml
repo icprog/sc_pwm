@@ -1,39 +1,24 @@
 <?xml version="1.0" ?>
 <xpd>
     <components>
-        <component description = "SOMANET Symmetrical PWM Demo" type = "demoCode" scope = "General Use" path = "app_pwm_symmetrical_demo" local = "false" id = "app_pwm_symmetrical_demo" name = "SOMANET Symmetrical PWM Demo Application">
-            <board>XK-SN-1BH12-E</board>
-            <board>XK-SN-1BQ12-E</board>
-            <board>SOMANET CORE C22</board>
-            <componentDependency repo = "git://github.com/synapticon/sc_pwm.git" version = "1.0.0">module_pwm_common</componentDependency>
-            <componentDependency repo = "git://github.com/synapticon/sc_pwm.git" version = "1.0.0">module_pwm_symmetrical</componentDependency>
-            <componentDependency repo = "git://github.com/synapticon/sc_pwm.git" version = "1.0.0">module_pwm_common</componentDependency>
-            <keyword>SOMANET</keyword>
-            <keyword>PWM</keyword>
-        </component>
-        <component description = "Common PWM module interfaces" type = "demoCode" scope = "General Use" path = "module_pwm_common" local = "false" id = "module_pwm_common" name = "SOMANET Common PWM module interfaces">
-            <board>XK-SN-1BH12-E</board>
-            <board>XK-SN-1BQ12-E</board>
-            <board>SOMANET CORE C22</board>
-            <keyword>PWM</keyword>
-            <keyword>SOMANET</keyword>
-        </component>
         <component description = "Symmetrical PWM module" type = "demoCode" scope = "General Use" path = "module_pwm_symmetrical" local = "false" id = "module_pwm_symmetrical" name = "SOMANET Symmetrical PWM module">
-            <board>S XK-SN-1BH12-E</board>
+            <board>XK-SN-1BH12-E</board>
             <board>XK-SN-1BQ12-E</board>
             <board>SOMANET CORE C22</board>
-            <componentDependency repo = "git://github.com/synapticon/sc_pwm.git" version = "1.0.0">module_pwm_common</componentDependency>
             <keyword>PWM</keyword>
             <keyword>SOMANET</keyword>
         </component>
     </components>
     <description>SOMANET version of the original XMOS Symmetrical PWM module</description>
+    <docdir>module_pwm_symmetrical/doc</docdir>
+    <exclude_dir>app_pwm_symmetrical_demo</exclude_dir>
     <location>https://github.com/synapticon/sc_pwm.git</location>
     <name>sc_pwm</name>
     <maintainer>Synapticon</maintainer>
     <partnumber>XM-005838-DH</partnumber>
     <release parenthash = "45f4ccc952abf73ce41d97dd49f03ba8616c7a7c" version = "1.0.0beta0" githash = "7d5744e0ad575aed7779c28faf150accf9f06890"></release>
     <release parenthash = "a0316c7fe7d7f8ba00e93c240ac09a3b3fb416b5" version = "1.0.0rc0" githash = "e3391d26ef95c6c2c4279fb2cd156d3fa23eb008"></release>
+    <release parenthash = "941ec68027745d6d96168c27562117f197654e0d" version = "1.0.1rc0" githash = "2dfdd8bbe8c8de6049d01f2f60af54dc61428838"></release>
     <release parenthash = "2dfdd8bbe8c8de6049d01f2f60af54dc61428838" version = "1.0.1rc1" githash = "08d99dd223719c4bd50c98dec9fee6963d260a00"></release>
     <release parenthash = "b25546ac1c7b78d24379b77cdcf8ed87d8d4c1f3" version = "1.0.1rc2" githash = "531aaf7457db13714adb6bed55417f07614cfb81"></release>
     <release parenthash = "7a12365ac1df8919042031762ddfe6c6820be911" version = "1.0.1rc3" githash = "5208235baaf7f1ca16b118a0e7412f855ad3edf9"></release>
