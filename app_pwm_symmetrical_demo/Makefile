@@ -1,15 +1,15 @@
 # The TARGET variable determines what target system the application is
 # compiled for. It either refers to an XN file in the source directories
 # or a valid argument for the --target option when compiling
-TARGET = SOMANET-C22-Motor_control-XScope_v13
+TARGET = SOMANET-C22_Motor-Control_xSCOPE
 
 # The APP_NAME variable determines the name of the final .xe file. It should
 # not include the .xe postfix. If left blank the name will default to
 # the project name
-APP_NAME =
+APP_NAME = app_pwm_symetrical_demo
 
 # The USED_MODULES variable lists other module used by the application.
-USED_MODULES = module_pwm_symmetrical
+USED_MODULES = module_pwm_symmetrical module_board-support
 
 # The flags passed to xcc when building the application
 # You can also set the following to override flags for a particular language:
