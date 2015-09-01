@@ -30,7 +30,7 @@
  * @param p_pwm_inv the array of inverted PWM ports
  * @param clk a clock for generating accurate PWM timing
  */
-void do_pwm_inv_triggered( chanend c_pwm, chanend c_adc_trig, in port dummy_port, buffered out port:32 p_pwm[],  buffered out port:32 p_pwm_inv[], clock clk);
+void do_pwm_inv_triggered( chanend c_pwm, chanend c_adc_trig, in port dummy_port, buffered out port:32 p_pwm[],  buffered out port:32 (&?p_pwm_inv)[], clock clk);
 
 
 
@@ -42,6 +42,6 @@ void do_pwm_inv_triggered( chanend c_pwm, chanend c_adc_trig, in port dummy_port
  * @param p_pwm_inv the array of inverted PWM ports
  * @param clk a clock for generating accurate PWM timing
  */
-void do_pwm_inv( chanend c_pwm, buffered out port:32 p_pwm[],  buffered out port:32 p_pwm_inv[], clock clk);
+void do_pwm_inv( chanend c_pwm, buffered out port:32 p_pwm[],  buffered out port:32 (&?p_pwm_inv)[], clock clk);
 
 
