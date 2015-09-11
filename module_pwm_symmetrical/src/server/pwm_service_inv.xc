@@ -69,21 +69,23 @@ void do_pwm_inv_triggered( chanend c_pwm, chanend c_adc_trig, in port dummy_port
 
 extern unsigned pwm_op_inv( unsigned buf, buffered out port:32 p_pwm[], buffered out port:32 (&?p_pwm_inv)[], chanend c, unsigned control );
 
-static void do_pwm_port_config_inv(  buffered out port:32 p_pwm[], buffered out port:32 p_pwm_inv[], clock clk )
+static void do_pwm_port_config_inv(  buffered out port:32 p_pwm[], buffered out port:32 (&?p_pwm_inv)[], clock clk )
 {
 	unsigned i;
 
 	for (i = 0; i < PWM_CHAN_COUNT; i++)
 	{
 		configure_out_port(p_pwm[i], clk, 0);
-		configure_out_port(p_pwm_inv[i], clk, 0);
-		set_port_inv(p_pwm_inv[i]);
+		if (!isnull(p_pwm_inv)){
+            configure_out_port(p_pwm_inv[i], clk, 0);
+            set_port_inv(p_pwm_inv[i]);
+		}
 	}
 
 	start_clock(clk);
 }
 
-void do_pwm_inv( chanend c_pwm, buffered out port:32 p_pwm[],  buffered out port:32 p_pwm_inv[], clock clk)
+void do_pwm_inv( chanend c_pwm, buffered out port:32 p_pwm[],  buffered out port:32 (&?p_pwm_inv)[], clock clk)
 {
 
 	unsigned buf, control;
