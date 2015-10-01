@@ -45,3 +45,4 @@ void do_pwm_inv_triggered( chanend c_pwm, chanend c_adc_trig, in port dummy_port
 void do_pwm_inv( chanend c_pwm, buffered out port:32 p_pwm[],  buffered out port:32 (&?p_pwm_inv)[], clock clk);
 
 
+void disable_fets(buffered out port:32 p_ifm_motor_hi[],  buffered out port:32 p_ifm_motor_lo[], char num_of_phases);

@@ -21,6 +21,24 @@
 
 #include <pwm_service_inv.h>
 
+void disable_fets(buffered out port:32 p_ifm_motor_hi[],  buffered out port:32 p_ifm_motor_lo[], char num_of_phases){
+
+    p_ifm_motor_hi[0] <: 0;
+    p_ifm_motor_hi[1] <: 0;
+    p_ifm_motor_hi[2] <: 0;
+
+    p_ifm_motor_lo[0] <: 0;
+    p_ifm_motor_lo[1] <: 0;
+    p_ifm_motor_lo[2] <: 0;
+
+    if(num_of_phases > 3){
+
+        p_ifm_motor_hi[3] <: 0;
+        p_ifm_motor_lo[3] <: 0;
+    }
+
+    delay_milliseconds(1);
+}
 
 #if LOCK_ADC_TO_PWM
 
