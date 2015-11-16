@@ -21,21 +21,21 @@
 
 #include <pwm_service_inv.h>
 
-void disable_fets(buffered out port:32 p_ifm_motor_hi[],  buffered out port:32 p_ifm_motor_lo[], char num_of_phases){
+void disable_fets(PwmPorts &ports){
 
-    p_ifm_motor_hi[0] <: 0;
-    p_ifm_motor_hi[1] <: 0;
-    p_ifm_motor_hi[2] <: 0;
+    ports.p_pwm[0] <: 0;
+    ports.p_pwm[1] <: 0;
+    ports.p_pwm[2] <: 0;
 
-    p_ifm_motor_lo[0] <: 0;
-    p_ifm_motor_lo[1] <: 0;
-    p_ifm_motor_lo[2] <: 0;
+    ports.p_pwm_inv[0] <: 0;
+    ports.p_pwm_inv[1] <: 0;
+    ports.p_pwm_inv[2] <: 0;
 
-    if(num_of_phases > 3){
 
-        p_ifm_motor_hi[3] <: 0;
-        p_ifm_motor_lo[3] <: 0;
-    }
+    if(!isnull(ports.p_pwm_phase_d))
+        ports.p_pwm_phase_d <: 0;
+    if(!isnull(ports.p_pwm_phase_d_inv))
+        ports.p_pwm_phase_d_inv <: 0;
 
     delay_milliseconds(1);
 }
@@ -63,9 +63,11 @@ static void do_pwm_port_config_inv_adc_trig( in port dummy, buffered out port:32
 	start_clock(clk);
 }
 
-void do_pwm_inv_triggered( chanend c_pwm, chanend c_adc_trig, in port dummy_port, buffered out port:32 p_pwm[], buffered out port:32 (&?p_pwm_inv)[], clock clk)
+void do_pwm_inv_triggered( chanend c_pwm, chanend c_adc_trig, PwmPorts &ports)
 {
     write_sswitch_reg(get_local_tile_id(), 8, 1); // (8) = REFDIV_REGNUM // 500MHz / ((1) + 1) = 250MHz
+
+    disable_fets(ports);
 
 	unsigned buf, control;
 
@@ -73,14 +75,14 @@ void do_pwm_inv_triggered( chanend c_pwm, chanend c_adc_trig, in port dummy_port
 	c_pwm :> control;
 
 	/* configure the ports */
-	do_pwm_port_config_inv_adc_trig( dummy_port, p_pwm, p_pwm_inv, clk );
+	do_pwm_port_config_inv_adc_trig( ports.dummy_port, ports.p_pwm, ports.p_pwm_inv, ports.clk );
 
 	/* wait for initial update */
 	c_pwm :> buf;
 
 	while (1)
 	{
-		buf = pwm_op_inv( buf, p_pwm, p_pwm_inv, c_pwm, control, c_adc_trig, dummy_port );
+		buf = pwm_op_inv( buf, ports.p_pwm, ports.p_pwm_inv, c_pwm, control, c_adc_trig, ports.dummy_port );
 	}
 
 }
@@ -106,9 +108,11 @@ static void do_pwm_port_config_inv(  buffered out port:32 p_pwm[], buffered out 
 	start_clock(clk);
 }
 
-void do_pwm_inv( chanend c_pwm, buffered out port:32 p_pwm[],  buffered out port:32 (&?p_pwm_inv)[], clock clk)
+void do_pwm_inv( chanend c_pwm, PwmPorts &ports)
 {
     write_sswitch_reg(get_local_tile_id(), 8, 1); // (8) = REFDIV_REGNUM // 500MHz / ((1) + 1) = 250MHz
+
+    disable_fets(ports);
 
 	unsigned buf, control;
 
@@ -116,14 +120,14 @@ void do_pwm_inv( chanend c_pwm, buffered out port:32 p_pwm[],  buffered out port
 	c_pwm :> control;
 
 	/* configure the ports */
-	do_pwm_port_config_inv( p_pwm, p_pwm_inv, clk);
+	do_pwm_port_config_inv( ports.p_pwm, ports.p_pwm_inv, ports.clk);
 
 	/* wait for initial update */
 	c_pwm :> buf;
 
 	while (1)
 	{
-		buf = pwm_op_inv( buf, p_pwm, p_pwm_inv, c_pwm, control );
+		buf = pwm_op_inv( buf, ports.p_pwm, ports.p_pwm_inv, c_pwm, control );
 	}
 
 }

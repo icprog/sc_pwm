@@ -15,8 +15,16 @@
 #pragma once
 
 #include <pwm_common.h>
-
 #include <xs1.h>
+
+typedef struct{
+    buffered out port:32 p_pwm[3];
+    buffered out port:32 p_pwm_inv[3];
+    buffered out port:32 ?p_pwm_phase_d;
+    buffered out port:32 ?p_pwm_phase_d_inv;
+    clock clk;
+    in port ?dummy_port;
+} PwmPorts;
 
 /**
  * @brief Implementation of the centre aligned inverted pair PWM server, with ADC synchronization
@@ -30,7 +38,7 @@
  * @param p_pwm_inv the array of inverted PWM ports
  * @param clk a clock for generating accurate PWM timing
  */
-void do_pwm_inv_triggered( chanend c_pwm, chanend c_adc_trig, in port dummy_port, buffered out port:32 p_pwm[],  buffered out port:32 (&?p_pwm_inv)[], clock clk);
+void do_pwm_inv_triggered( chanend c_pwm, chanend c_adc_trig, PwmPorts &ports);
 
 
 
@@ -42,7 +50,7 @@ void do_pwm_inv_triggered( chanend c_pwm, chanend c_adc_trig, in port dummy_port
  * @param p_pwm_inv the array of inverted PWM ports
  * @param clk a clock for generating accurate PWM timing
  */
-void do_pwm_inv( chanend c_pwm, buffered out port:32 p_pwm[],  buffered out port:32 (&?p_pwm_inv)[], clock clk);
+void do_pwm_inv( chanend c_pwm, PwmPorts &ports);
 
 
-void disable_fets(buffered out port:32 p_ifm_motor_hi[],  buffered out port:32 p_ifm_motor_lo[], char num_of_phases);
+void disable_fets(PwmPorts &ports);
