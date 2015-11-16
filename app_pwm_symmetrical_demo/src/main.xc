@@ -8,16 +8,18 @@
 
 /* For a PWM clock speed >100 MHz only the reference clock can be used.
    The reference clock can be configured in the platform XN file */
-on stdcore[3]: clock clk_pwm = XS1_CLKBLK_REF;
-
 /* Only port logic (port timer) will be used, no outputs or inputs will be performed.
    This also means that ports which share pins this port but have higher precedence
    can still be used without any limitations */
-on stdcore[3]: in port p_dummy = XS1_PORT_16A;
-
 /* High-side and low-side gate control ports for 6 half bridges */
-on stdcore[3]: buffered out port:32 p_high_side[3] = { XS1_PORT_1K, XS1_PORT_1O, XS1_PORT_1M };
-on stdcore[3]: buffered out port:32 p_low_side[3] = { XS1_PORT_1L, XS1_PORT_1P, XS1_PORT_1N };
+on tile[3]: PwmPorts pwm_ports = {
+        { XS1_PORT_1K, XS1_PORT_1O, XS1_PORT_1M },
+        { XS1_PORT_1L, XS1_PORT_1P, XS1_PORT_1N },
+        null,
+        null,
+        XS1_CLKBLK_REF,
+        XS1_PORT_16A
+};
 
 /* ADC */
 on stdcore[3]: out port p_adc_conv = XS1_PORT_1A;
@@ -37,9 +39,7 @@ int main (void)
 
             t :> ts;
             t when timerafter (ts + 42000) :> void;
-            do_pwm_inv_triggered(c_pwm_ctrl, c_adc_trigger,
-                                 p_dummy, p_high_side, p_low_side,
-                                 clk_pwm);
+            do_pwm_inv_triggered(c_pwm_ctrl, c_adc_trigger, pwm_ports);
         }
 
 
