@@ -65,6 +65,7 @@ static void do_pwm_port_config_inv_adc_trig( in port dummy, buffered out port:32
 
 void do_pwm_inv_triggered( chanend c_pwm, chanend c_adc_trig, in port dummy_port, buffered out port:32 p_pwm[], buffered out port:32 (&?p_pwm_inv)[], clock clk)
 {
+    write_sswitch_reg(get_local_tile_id(), 8, 1); // (8) = REFDIV_REGNUM // 500MHz / ((1) + 1) = 250MHz
 
 	unsigned buf, control;
 
@@ -91,6 +92,8 @@ static void do_pwm_port_config_inv(  buffered out port:32 p_pwm[], buffered out 
 {
 	unsigned i;
 
+
+
 	for (i = 0; i < PWM_CHAN_COUNT; i++)
 	{
 		configure_out_port(p_pwm[i], clk, 0);
@@ -105,6 +108,7 @@ static void do_pwm_port_config_inv(  buffered out port:32 p_pwm[], buffered out 
 
 void do_pwm_inv( chanend c_pwm, buffered out port:32 p_pwm[],  buffered out port:32 (&?p_pwm_inv)[], clock clk)
 {
+    write_sswitch_reg(get_local_tile_id(), 8, 1); // (8) = REFDIV_REGNUM // 500MHz / ((1) + 1) = 250MHz
 
 	unsigned buf, control;
 
