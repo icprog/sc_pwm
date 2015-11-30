@@ -23,19 +23,19 @@
 
 #include <pwm_common.h>
 
-.extern pwm_op_inv
-.globl pwm_op_inv.nstackwords
-.globl pwm_op_inv.maxthreads
-.globl pwm_op_inv.maxtimers
-.globl pwm_op_inv.maxchanends
+.extern pwm_op_inv_trig
+.globl pwm_op_inv_trig.nstackwords
+.globl pwm_op_inv_trig.maxthreads
+.globl pwm_op_inv_trig.maxtimers
+.globl pwm_op_inv_trig.maxchanends
 
-.linkset pwm_op_inv.nstackwords, 13
-.linkset pwm_op_inv.maxchanends, 1
-.linkset pwm_op_inv.maxtimers, 0
-.linkset pwm_op_inv.maxthreads, 0
+.linkset pwm_op_inv_trig.nstackwords, 13
+.linkset pwm_op_inv_trig.maxchanends, 1
+.linkset pwm_op_inv_trig.maxtimers, 0
+.linkset pwm_op_inv_trig.maxthreads, 0
 
-.globl pwm_op_inv
-.cc_top pwm_op_inv.func, pwm_op_inv
+.globl pwm_op_inv_trig
+.cc_top pwm_op_inv_trig.func, pwm_op_inv_trig
 .text
 
 // r0 - buf
@@ -45,7 +45,7 @@
 // sp[14] - address of shared memory buffer
 // sp[15] - adc trigger channel
 // sp[16] - dummy port for adc trigger
-pwm_op_inv:
+pwm_op_inv_trig:
 	entsp 13
 
 	// callee save
@@ -171,10 +171,13 @@ PWM_STOP:
 	ldw r10, sp[11]	   // load channel
 
 PWM_STOP_LOOP:
-	// timed output on Port 0; only for synchronisation
-	ldc r8, 0
-	setpt res[r0], r7
-	out res[r0], r8
+	// dummy port will be used for synchronisation
+	ldw r8, sp[16]		   // load port
+	setpt res[r8], r7	   // pt = sync point
+	ldw r10, sp[15]		   // load adc trig chanend
+	in r8, res[r8]		   // wait until we hit setpt
+	outct res[r10], XS1_CT_END // send adc trig token
+	ldw r10, sp[11]		   // load clobbered chanend
 
 	// setup event
 	mov r8, r11
@@ -232,6 +235,14 @@ PWM_MODE_1_LOOP:
 	out res[r2], r8
 	ldw r8, r5[5]
 	out res[r11], r8
+
+	// trigger adc
+	ldw r8, sp[16]		   // load port
+	setpt res[r8], r7	   // pt = sync point
+	ldw r10, sp[15]		   // load adc trig chanend
+	in r8, res[r8]		   // wait until we hit setpt
+	outct res[r10], XS1_CT_END // send adc trig token
+	ldw r10, sp[11]		   // load clobbered chanend
 
 	// setup event
 	mov r8, r11
@@ -381,6 +392,14 @@ PWM_MODE_2_LOOP:
 	ldw r8, r5[5]
 	out res[r11], r8
 
+	// trigger adc
+	ldw r8, sp[16]             // load port
+	setpt res[r8], r7          // pt = sync point
+	ldw r10, sp[15]            // load adc trig chanend
+	in r8, res[r8]             // wait until we hit setpt
+	outct res[r10], XS1_CT_END // send adc trig token
+	ldw r10, sp[11]            // load clobbered chanend
+
 	// Channel 0
 	ldw r8, r3[2]
 	add r8, r7, r8
@@ -451,6 +470,14 @@ PWM_MODE_3_LOOP:
 	out res[r2], r8
 	ldw r8, r5[5]
 	out res[r11], r8
+
+	// trigger adc
+	ldw r8, sp[16]             // load port
+	setpt res[r8], r7          // pt = sync point
+	ldw r10, sp[15]            // load adc trig chanend
+	in r8, res[r8]             // wait until we hit setpt
+	outct res[r10], XS1_CT_END // send adc trig token
+	ldw r10, sp[11]            // load clobbered chanend
 
 	// Channel 1
 	ldw r8, r4[2]
@@ -534,6 +561,14 @@ PWM_MODE_4_LOOP:
 	out res[r2], r8
 	ldw r8, r5[5]
 	out res[r11], r8
+
+	// trigger adc
+	ldw r8, sp[16]             // load port
+	setpt res[r8], r7          // pt = sync point
+	ldw r10, sp[15]            // load adc trig chanend
+	in r8, res[r8]             // wait until we hit setpt
+	outct res[r10], XS1_CT_END // send adc trig token
+	ldw r10, sp[11]            // load clobbered chanend
 
 	// Channel 2
 	ldw r8, r5[2]
@@ -630,6 +665,13 @@ PWM_MODE_5_LOOP:
 	out res[r2], r8
 	ldw r8, r5[5]
 	out res[r11], r8
+	// trigger adc
+	ldw r8, sp[16]             // load port
+	setpt res[r8], r7          // pt = sync point
+	ldw r10, sp[15]            // load adc trig chanend
+	in r8, res[r8]             // wait until we hit setpt
+	outct res[r10], XS1_CT_END // send adc trig token
+	ldw r10, sp[11]            // load clobbered chanend
 
 	// Channel 1
 	ldw r8, r4[2]
@@ -701,6 +743,14 @@ PWM_MODE_6_LOOP:
 	out res[r2], r8
 	ldw r8, r5[5]
 	out res[r11], r8
+
+	// trigger adc
+	ldw r8, sp[16]             // load port
+	setpt res[r8], r7          // pt = sync point
+	ldw r10, sp[15]            // load adc trig chanend
+	in r8, res[r8]             // wait until we hit setpt
+	outct res[r10], XS1_CT_END // send adc trig token
+	ldw r10, sp[11]            // load clobbered chanend
 
 	// Channel 2
 	ldw r8, r5[2]
@@ -784,6 +834,14 @@ PWM_MODE_7_LOOP:
 	out res[r2], r8
 	ldw r8, r5[5]
 	out res[r11], r8
+
+	// trigger adc
+	ldw r8, sp[16]             // load port
+	setpt res[r8], r7          // pt = sync point
+	ldw r10, sp[15]            // load adc trig chanend
+	in r8, res[r8]             // wait until we hit setpt
+	outct res[r10], XS1_CT_END // send adc trig token
+	ldw r10, sp[11]            // load clobbered chanend
 
 	// update SYNC timestamp
 	ldc r8, SYNC_INCREMENT
@@ -906,5 +964,5 @@ GO_UPDATE_M7:
 	bu PWM_STOP
 
 
-.cc_bottom pwm_op_inv.func
+.cc_bottom pwm_op_inv_trig.func
 

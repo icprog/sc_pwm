@@ -26,6 +26,9 @@ typedef struct{
     in port ?dummy_port;
 } PwmPorts;
 
+
+void disable_fets(PwmPorts &ports);
+
 /**
  * @brief Implementation of the centre aligned inverted pair PWM server, with ADC synchronization
  *
@@ -38,9 +41,7 @@ typedef struct{
  * @param p_pwm_inv the array of inverted PWM ports
  * @param clk a clock for generating accurate PWM timing
  */
-void do_pwm_inv_triggered( chanend c_pwm, chanend c_adc_trig, PwmPorts &ports);
-
-
+void pwm_triggered_service( chanend c_pwm, chanend c_adc_trig, PwmPorts &ports);
 
 /**
  * @brief Implementation of the centre aligned inverted pair PWM server
@@ -50,7 +51,4 @@ void do_pwm_inv_triggered( chanend c_pwm, chanend c_adc_trig, PwmPorts &ports);
  * @param p_pwm_inv the array of inverted PWM ports
  * @param clk a clock for generating accurate PWM timing
  */
-void do_pwm_inv( chanend c_pwm, PwmPorts &ports);
-
-
-void disable_fets(PwmPorts &ports);
+void pwm_service( chanend c_pwm, PwmPorts &ports);

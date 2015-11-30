@@ -16,9 +16,10 @@
 
 #pragma once
 
-#ifdef __pwm_config_h_exists__
-#include <pwm_config.h>
-#endif
+/****** CONFIGURATION. DO NOT TOUCH!! ******/
+#define PWM_DEAD_TIME 700
+#define PWM_MAX_VALUE 13889
+/*******************************************/
 
 #ifndef __ASSEMBLER__
 
