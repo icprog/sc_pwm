@@ -1,29 +1,15 @@
-#include <pwm_test.h>
-
-#include <pwm_service_inv.h>
+#include <CORE_C22-rev-a.inc>
+#include <IFM_DC100-rev-b.inc>
 
 #include <stdlib.h>
-#include <xs1.h>
-#include <platform.h>
 
-/* For a PWM clock speed >100 MHz only the reference clock can be used.
-   The reference clock can be configured in the platform XN file */
-/* Only port logic (port timer) will be used, no outputs or inputs will be performed.
-   This also means that ports which share pins this port but have higher precedence
-   can still be used without any limitations */
-/* High-side and low-side gate control ports for 6 half bridges */
-on tile[3]: PwmPorts pwm_ports = {
-        { XS1_PORT_1K, XS1_PORT_1O, XS1_PORT_1M },
-        { XS1_PORT_1L, XS1_PORT_1P, XS1_PORT_1N },
-        null,
-        null,
-        XS1_CLKBLK_REF,
-        XS1_PORT_16A
-};
+#include <pwm_service.h>
+#include <pwm_test.h>
+
+on tile[3]: PwmPorts pwm_ports = SOMANET_IFM_PWM_PORTS;
 
 /* ADC */
 on stdcore[3]: out port p_adc_conv = XS1_PORT_1A;
-
 
 int main (void)
 {
@@ -39,7 +25,7 @@ int main (void)
 
             t :> ts;
             t when timerafter (ts + 42000) :> void;
-            do_pwm_inv_triggered(c_pwm_ctrl, c_adc_trigger, pwm_ports);
+            pwm_triggered_service(c_pwm_ctrl, c_adc_trigger, pwm_ports);
         }
 
 
@@ -70,4 +56,6 @@ int main (void)
             }
         }
     }
+
+    return 0;
 }
