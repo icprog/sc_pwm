@@ -41,7 +41,7 @@ void disable_fets(PwmPorts &ports);
  * @param p_pwm_inv the array of inverted PWM ports
  * @param clk a clock for generating accurate PWM timing
  */
-void pwm_triggered_service( chanend c_pwm, chanend c_adc_trig, PwmPorts &ports);
+void pwm_triggered_service(PwmPorts &ports, chanend c_pwm, chanend c_adc_trig);
 
 /**
  * @brief Implementation of the centre aligned inverted pair PWM server
@@ -51,4 +51,4 @@ void pwm_triggered_service( chanend c_pwm, chanend c_adc_trig, PwmPorts &ports);
  * @param p_pwm_inv the array of inverted PWM ports
  * @param clk a clock for generating accurate PWM timing
  */
-void pwm_service( chanend c_pwm, PwmPorts &ports);
+void pwm_service( PwmPorts &ports, chanend c_pwm);

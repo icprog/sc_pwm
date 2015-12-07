@@ -75,7 +75,7 @@ static void do_pwm_port_config_inv_adc_trig( in port dummy, buffered out port:32
 
 extern unsigned pwm_op_inv( unsigned buf, buffered out port:32 p_pwm[], buffered out port:32 (&?p_pwm_inv)[], chanend c, unsigned control );
 
-void pwm_service( chanend c_pwm, PwmPorts &ports)
+void pwm_service( PwmPorts &ports, chanend c_pwm)
 {
     //Set Tile Ref Freq to 250MHz
     write_sswitch_reg(get_local_tile_id(), 8, 1); // (8) = REFDIV_REGNUM // 500MHz / ((1) + 1) = 250MHz
@@ -102,7 +102,7 @@ void pwm_service( chanend c_pwm, PwmPorts &ports)
 
 extern unsigned pwm_op_inv_trig( unsigned buf, buffered out port:32 p_pwm[], buffered out port:32 (&?p_pwm_inv)[], chanend c, unsigned control, chanend c_trig, in port dummy_port );
 
-void pwm_triggered_service( chanend c_pwm, chanend c_adc_trig, PwmPorts &ports)
+void pwm_triggered_service(PwmPorts &ports, chanend c_pwm, chanend c_adc_trig)
 {
 
     //Set Tile Ref Freq to 250MHz

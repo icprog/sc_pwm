@@ -25,7 +25,7 @@ int main (void)
 
             t :> ts;
             t when timerafter (ts + 42000) :> void;
-            pwm_triggered_service(c_pwm_ctrl, c_adc_trigger, pwm_ports);
+            pwm_triggered_service(pwm_ports, c_pwm_ctrl, c_adc_trigger);
         }
 
 
